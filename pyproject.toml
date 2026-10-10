@@ -1,7 +1,7 @@
 [project]
 name = "cartflow"
 version = "0.1.0"
-description = "Add your description here"
+description = "Pet project for training purposes"
 readme = "README.md"
 authors = [
     { name = "nimfus", email = "nimfus@gmail.com" }
