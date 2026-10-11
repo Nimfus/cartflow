@@ -7,7 +7,7 @@ def test_health_liveness() -> None:
     with TestClient(create_app()) as client:
         response = client.get("/health/live")
         assert response.status_code == 200
-        assert response.json() == {"status": "ok"}
+        assert response.json() == {"service": "cartflow", "status": "ok"}
 
 
 def test_health_readiness() -> None:
