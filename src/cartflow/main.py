@@ -12,6 +12,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         title=resolved_settings.service_name, debug=resolved_settings.debug, lifespan=create_lifespan(resolved_settings)
     )
     app.state.settings = resolved_settings
+    app.state.ready = False
 
     app.include_router(health_router)
 
