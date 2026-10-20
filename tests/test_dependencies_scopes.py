@@ -63,7 +63,7 @@ def test_dependency_cleanup_after_handler_failure() -> None:
         async def failing_endpoint(
             resource: Annotated[object, Depends(acquire_probe)],
         ) -> None:
-            raise HTTPException(status_code=503, detail="Injection failure")
+            raise HTTPException()
 
         with TestClient(app) as client:
             resp = client.get("/__test__/failure")
