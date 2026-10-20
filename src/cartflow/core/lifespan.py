@@ -11,7 +11,10 @@ def create_lifespan(settings: Settings) -> Any:
 
     @asynccontextmanager
     async def lifespan(app: FastAPI) -> AsyncIterator[None]:
-
-        yield
+        app.state.ready = True
+        try:
+            yield
+        finally:
+            app.state.ready = False
 
     return lifespan
